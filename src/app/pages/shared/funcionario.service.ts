@@ -26,6 +26,6 @@ export class FuncionarioService {
     }
 
     remove(index: number) {
-      this._funcionarios.slice(index, 1);
+      this._funcionarios.splice(index, 1);
     }
 }

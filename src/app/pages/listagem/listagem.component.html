@@ -14,12 +14,12 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let funcionario of funcionarios">
+                        <tr *ngFor="let funcionario of funcionarios; let i = index">
                             <td>{{ funcionario.nome }}</td>
                             <td>{{ funcionario.funcao }}</td>
                             <td>{{ funcionario.empresa }}</td>
                             <td>{{ funcionario.dataEmbarque | date: 'dd/MM/yyyy' }}</td>
-                            <td><button type="button" class="btn btn-primary" (click)="desembarcar($index)">Desembarcar</button></td>
+                            <td><button type="button" class="btn btn-primary" (click)="desembarcar(i)">Desembarcar</button></td>
                         </tr>
                     </tbody>
                 </table>
