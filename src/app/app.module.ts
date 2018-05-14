@@ -6,6 +6,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { ListagemComponent } from './pages/listagem/listagem.component';
+import { EmbarqueComponent } from './pages/embarque/embarque.component';
 
 const appRoutes: Routes = [
   //home
@@ -21,6 +23,16 @@ const appRoutes: Routes = [
 {
     path: 'cadastro',
     component: CadastroComponent
+},
+//Listagem
+{
+  path: 'listagem',
+  component: ListagemComponent
+},
+//Cadastro
+{
+  path: 'embarque',
+  component: EmbarqueComponent
 }   
 ];
 
@@ -28,7 +40,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CadastroComponent,
-    HomeComponent
+    HomeComponent,
+    ListagemComponent,
+    EmbarqueComponent
   ],
   imports: [
     BrowserModule,

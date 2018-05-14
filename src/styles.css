@@ -32,3 +32,17 @@ nav {
 .vermelho {
     color: #cc0001;
 }
+
+.btn-primary {
+    background-color: #cc0001;
+    border-color: #cc0001;
+}
+
+.btn-primary:hover {
+    background-color: #d24748;
+    border-color: #d24748;
+}
+
+.full {
+    width: 100%;
+}
