@@ -12,31 +12,15 @@
                             <th>Embarque</th>
                             <th>Desembarque</th>
                         </tr>
-
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Alex Caminha Cambuy</td>
-                            <td>Consultor TI</td>
-                            <td>Halliburton</td>
-                            <td>01/06/2018</td>
-                            <td><button type="submit" class="btn btn-primary">Desembarcar</button></td>
+                        <tr *ngFor="let funcionario of funcionarios">
+                            <td>{{ funcionario.nome }}</td>
+                            <td>{{ funcionario.funcao }}</td>
+                            <td>{{ funcionario.empresa }}</td>
+                            <td>{{ funcionario.dataEmbarque | date: 'dd/MM/yyyy' }}</td>
+                            <td><button type="button" class="btn btn-primary" (click)="desembarcar($index)">Desembarcar</button></td>
                         </tr>
-                        <tr>
-                            <td>Alex Caminha Cambuy</td>
-                            <td>Consultor TI</td>
-                            <td>Halliburton</td>
-                            <td>01/06/2018</td>
-                            <td><button type="submit" class="btn btn-primary">Desembarcar</button></td>
-                        </tr>
-                        <tr>
-                            <td>Alex Caminha Cambuy</td>
-                            <td>Consultor TI</td>
-                            <td>Halliburton</td>
-                            <td>01/06/2018</td>
-                            <td><button type="submit" class="btn btn-primary">Desembarcar</button></td>
-                        </tr>
-
                     </tbody>
                 </table>
             </form>

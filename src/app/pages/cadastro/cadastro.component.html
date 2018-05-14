@@ -1,19 +1,19 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <form>
+            <form [formGroup]="funcionarioForm" (ngSubmit)="salvar()">
                 <h2 class="vermelho">Cadastro de Funcionário</h2>
                 <div class="form-group">
                     <label for="nome">Nome</label>
-                    <input type="text" class="form-control" id="nome" aria-describedby="nomeHelp" placeholder="Insira o nome completo">
+                    <input type="text" class="form-control" [(ngModel)]="funcionario.nome" formControlName="nome" aria-describedby="nomeHelp" placeholder="Insira o nome completo">
                 </div>
                 <div class="form-group">
                     <label for="funcao">Função</label>
-                    <input type="text" class="form-control" id="funcao" aria-describedby="funcaoHelp" placeholder="Insira a função">
+                    <input type="text" class="form-control" [(ngModel)]="funcionario.funcao" formControlName="funcao" aria-describedby="funcaoHelp" placeholder="Insira a função">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputNome">Empresa</label>
-                    <input type="text" class="form-control" id="empresa" aria-describedby="empresaHelp" placeholder="Insira a empresa">
+                    <input type="text" class="form-control"  [(ngModel)]="funcionario.empresa" formControlName="empresa" aria-describedby="empresaHelp" placeholder="Insira a empresa">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
