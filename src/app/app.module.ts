@@ -1,39 +1,37 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ListagemComponent } from './pages/listagem/listagem.component';
 import { EmbarqueComponent } from './pages/embarque/embarque.component';
+import { FuncionarioService } from './pages/shared/funcionario.service';
 
 const appRoutes: Routes = [
-  //home
   {
     path: '',
     component: HomeComponent
-},
+  },
+    {
+      path: 'home',
+      component: HomeComponent
+  },
   {
-    path: 'home',
-    component: HomeComponent
-},
-//Cadastro
-{
-    path: 'cadastro',
-    component: CadastroComponent
-},
-//Listagem
-{
-  path: 'listagem',
-  component: ListagemComponent
-},
-//Cadastro
-{
-  path: 'embarque',
-  component: EmbarqueComponent
-}   
+      path: 'cadastro',
+      component: CadastroComponent
+  },
+  {
+    path: 'listagem',
+    component: ListagemComponent
+  },
+  {
+    path: 'embarque',
+    component: EmbarqueComponent
+  }
 ];
 
 @NgModule({
@@ -46,13 +44,15 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot(
       appRoutes,
       { enableTracing: true } // <-- debugging purposes only
     )
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ FuncionarioService ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
