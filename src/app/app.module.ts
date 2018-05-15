@@ -8,7 +8,6 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ListagemComponent } from './pages/listagem/listagem.component';
-import { EmbarqueComponent } from './pages/embarque/embarque.component';
 import { FuncionarioService } from './pages/shared/funcionario.service';
 
 const appRoutes: Routes = [
@@ -27,10 +26,6 @@ const appRoutes: Routes = [
   {
     path: 'listagem',
     component: ListagemComponent
-  },
-  {
-    path: 'embarque',
-    component: EmbarqueComponent
   }
 ];
 
@@ -39,8 +34,7 @@ const appRoutes: Routes = [
     AppComponent,
     CadastroComponent,
     HomeComponent,
-    ListagemComponent,
-    EmbarqueComponent
+    ListagemComponent
   ],
   imports: [
     BrowserModule,

@@ -1,28 +1,38 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <form>
-                <h2 class="vermelho">Funcionários Cadastrados</h2>
-                <table class="table table-hover">
-                    <thead>
-                        <tr>
-                            <th>Nome</th>
-                            <th>Função</th>
-                            <th>Empresa</th>
-                            <th>Embarque</th>
-                            <th>Desembarque</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let funcionario of funcionarios; let i = index">
-                            <td>{{ funcionario.nome }}</td>
-                            <td>{{ funcionario.funcao }}</td>
-                            <td>{{ funcionario.empresa }}</td>
-                            <td>{{ funcionario.dataEmbarque | date: 'dd/MM/yyyy' }}</td>
-                            <td><button type="button" class="btn btn-primary" (click)="desembarcar(i)">Desembarcar</button></td>
-                        </tr>
-                    </tbody>
-                </table>
+            <form [formGroup]="DataEmbarqueForm" (ngSubmit)="salvar()">
+                <div class="form-group">
+                    <h2 class="vermelho">Funcionários Cadastrados</h2>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Função</th>
+                                <th>Empresa</th>
+                                <th>Embarque</th>
+                                <th>Desembarque</th>
+                                <th>Excluir</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let funcionario of funcionarios; let i = index">
+
+                                <td>{{ funcionario.nome }}</td>
+                                <td>{{ funcionario.funcao }}</td>
+                                <td>{{ funcionario.empresa }}</td>
+                                <td>
+                                    <input *ngIf="!funcionario.dataEmbarque" type="date" class="form-control" [(ngModel)]="funcionario.dataEmbarque" formControlName="dataEmbarque" /> {{ funcionario.dataEmbarque | date: 'dd/MM/yyyy' }}
+                                </td>
+                                <td>
+                                    <input *ngIf="!funcionario.dataDesembarque" type="date" class="form-control" [(ngModel)]="funcionario.dataDesembarque" formControlName="dataDesembarque" /> {{ funcionario.dataDesembarque | date: 'dd/MM/yyyy' }}
+                                </td>
+                                <td><button type="button" class="btn btn-primary" (click)="excluir(i)">Excluir</button></td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </form>
         </div>
     </div>

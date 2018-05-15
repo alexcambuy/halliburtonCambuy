@@ -3,6 +3,7 @@ export class Funcionario {
     funcao: string;
     empresa: string;
     dataEmbarque: Date;
+    dataDesembarque: Date;
 
     constructor() { }
 
